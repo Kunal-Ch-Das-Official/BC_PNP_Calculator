@@ -1,0 +1,849 @@
+<!-- 
+Content : BC_PNP calculator, for canx immigration,
+Author: Kunal Chandra Das,
+Date: 18/03/2024 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC PNP Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+
+        <!-- PAGE HEADING SECTION  -->
+    <div class="page-content" id="headings-content">
+            <h1 class="page-headings" id="headings">BC PNP Calculator 2024 [Updated]</h1>
+            <p class="about-txt">
+                Our BC PNP Points Calculator 2023 Updated Version is a valuable tool designed to assist individuals in assessing their eligibility and potential score for the British Columbia Provincial Nominee Program (BC PNP). This user-friendly calculator takes into account various factors that contribute to your overall qualification for different categories within the BC PNP.
+            </p>
+    </div>
+    <div class="status"></div>
+    <main class="main-box" id="main-box">
+    <!-- 1. WORK EXPERIENCE SECTION-->
+    <section class="common-section" id="work-experience">
+        <div class="work-xp-content">
+            <h2 class="factor-heading_1">Human Capital Factors</h2> 
+            <h3 id="section-heading-1" class="section-heading-1">Work Experience</h3>
+
+            <div class="dynamic-content-1" id="dynamic-content-1">
+                <div class="dynamic-content-1" id="dynamic-content-4">
+                    <h4 class="w-xp-content-heading" 
+                    id="w-xp-content-heading">
+                    Directly Related Work Experience in the Occupation of B.C. Job Offer</h4>
+
+                <label for="work-xp-radio-1" class="work-experience-label" id="xp_label_1">
+                    <input type="radio" name="above-5-years" 
+                    class="work-experience-radio-btn"
+                     id="work-xp-radio-1" 
+                     onclick="workExperiencePointCalculations(1)">
+                    5 or more years
+                </label>
+
+                <label for="work-xp-radio-2" class="work-experience-label" id="xp_label_2">
+                    <input type="radio" name="4-5-years" 
+                    class="work-experience-radio-btn"
+                    id="work-xp-radio-2" 
+                    onclick="workExperiencePointCalculations(2)">
+                    At least 4 but less than 5 years
+                </label>
+
+                <label for="work-xp-radio-3" class="work-experience-label" id="xp_label_3">
+                    <input type="radio" name="3-4-years" 
+                    class="work-experience-radio-btn"
+                    id="work-xp-radio-3"
+                    onclick="workExperiencePointCalculations(3)">
+                    At least 3 but less than 4 years
+                </label>
+
+                <label for="work-xp-radio-4" class="work-experience-label" id="xp_label_4">
+                    <input type="radio" name="2-3-years"
+                    class="work-experience-radio-btn" 
+                    id="work-xp-radio-4"
+                    onclick="workExperiencePointCalculations(4)">
+                    At least 2 but less than 3 years
+                </label>
+
+                <label for="work-xp-radio-5" class="work-experience-label" id="xp_label_5">
+                    <input type="radio" name="1-2-years"
+                    class="work-experience-radio-btn" 
+                    id="work-xp-radio-5"
+                    onclick="workExperiencePointCalculations(5)">
+                    At least 1 but less than 2 years
+                </label>
+
+                <label for="work-xp-radio-6" class="work-experience-label" id="xp_label_6">
+                    <input type="radio" name="0-1-years" 
+                    class="work-experience-radio-btn" 
+                    id="work-xp-radio-6"
+                    onclick="workExperiencePointCalculations(6)">
+                    Less than 1 year
+                </label>
+
+                <label for="work-xp-radio-7" class="work-experience-label" id="xp_label_7">
+                    <input type="radio" name="no-experience" 
+                    class="work-experience-radio-btn" 
+                    id="work-xp-radio-7"
+                    onclick="workExperiencePointCalculations(7)">
+                    No experience
+                </label>
+            </div>
+        </div>
+        <div class="functionality" id="functionality">
+            <label for="workExperiencePointDisplayer" class="work-experience-points">Point
+            <input type="text" name="work-experience-point-displayer"
+             class="work-experience-point-displayer"
+             id="workExperiencePointDisplayer" readonly>
+            </label>
+             <button class="btn" id="next-btn-w-xp"
+             onclick="workExperienceGoNextBtn()">
+             Next >
+            </button>
+          </div>
+    </section>
+
+
+    <!-- 2. AT LEAST 1 YEAR OF DIRECTLY RELATED EXPERIENCE IN CANADA? SECTION-->
+    <section class="common-section" id="first-additional-work-xp">
+        <div class="first-ad-content-work-xp">
+            <h2 class="factor-heading_1">Human Capital Factors</h2>
+            <h3 id="section-heading-2" class="section-heading-1">Work Experience</h3>
+
+              <div class="dynamic-content-1" id="dynamic-content-2">
+                <h4 class="ad-content-work-xp-heading" 
+                id="first-ad-content-work-xp-heading-1">
+                At least 1 year of directly related experience in Canada?</h4>
+
+                <label for="work-xp-radio-8" class="work-experience-label" id="xp_label_8">
+                    <input type="radio" name="Yes" 
+                    class="first-additional-wxp-radio-btn"
+                     id="work-xp-radio-8"
+                     onclick="additionalWorkExperienceOne(1)">
+                    Yes
+                </label>
+                <label for="work-xp-radio-9" class="work-experience-label" id="xp_label_9">
+                    <input type="radio" name="No" 
+                    class="first-additional-wxp-radio-btn"
+                    id="work-xp-radio-9"
+                    onclick="additionalWorkExperienceOne(0)">
+                    No
+                </label>
+              </div>
+        </div>
+        <div class="functionality-1" id="functionality-1">
+            <label for="workExperiencePointDisplayer_1" class="work-experience-points">Point
+            <input type="text" name="work-experience-point-displayer-1"
+             class="work-experience-point-displayer"
+             id="workExperiencePointDisplayer_1" readonly>
+            </label>
+             <button class="btn" id="prev-btn-w-xp-sec-1"
+             onclick="firstAdditionalWorkExperiencePreviousBtn()"> < Prev </button>
+
+             <button class="btn" id="next-btn-w-xp-sec-1"
+             onclick="firstAdditionalWorkExperienceNextBtn()">Next ></button>
+          </div>
+    </section>
+
+
+    <!-- 3. ARE YOU CURRENTLY WORKING FULL-TIME FOR YOUR SUPPORTING B.C. EMPLOYER? SECTION -->
+    <section class="common-section" id="second-additional-work-xp">
+        <div class="second-ad-content-work-xp">
+            <h2 class="factor-heading_1">Human Capital Factors</h2>
+            <h3 id="section-heading-3" class="section-heading-1">Work Experience</h3>
+
+
+
+              <div class="dynamic-content-1" id="dynamic-content-3">
+                <h4 class="ad-content-work-xp-heading" 
+                id="second-ad-content-work-xp-heading-2">
+                Are you currently working full-time for your supporting B.C. employer?</h4>
+
+                <label for="work-xp-radio-10" class="work-experience-label" id="xp_label_10">
+                    <input type="radio" name="yes"
+                     class="second-additional-wxp-radio-btn"
+                      id="work-xp-radio-10"
+                      onclick="additionalWorkExperienceTwo(1)">
+                    Yes
+                </label>
+                <label for="work-xp-radio-11" class="work-experience-label" id="xp_label_11">
+                    <input type="radio" name="no" 
+                    class="second-additional-wxp-radio-btn" 
+                    id="work-xp-radio-11"
+                    onclick="additionalWorkExperienceTwo(0)">
+                    No
+                </label>
+              </div>
+        </div>
+        <div class="functionality-2" id="functionality-2">
+            <label for="workExperiencePointDisplayer_2" class="work-experience-points">Point
+            <input type="text" name="work-experience-point-displayer-2"
+             class="work-experience-point-displayer"
+             id="workExperiencePointDisplayer_2" readonly>
+            </label>
+
+             <button class="btn" id="prev-btn-w-xp-sec-2"
+             onclick="secondAdditionalWorkExperiencePreviousBtn()"> 
+             < Prev 
+            </button>
+
+             <button class="btn" id="next-btn-w-xp-sec-2" 
+             onclick="secondAdditionalWorkExperienceNextBtn()">
+             Next >
+            </button>
+
+          </div>
+    </section>
+
+
+    <!-- 4. HIGHEST EDUCATION SECTION  -->
+    <section class="common-section" id="educations">
+        <div class="education-content">
+
+            <h2 class="factor-heading_1">Human Capital Factors</h2> 
+            <h3 id="section-heading-4" class="section-heading-1">Education</h3>
+
+            <div class="dynamic-content-1" id="dynamic-content-4">
+                <h4 class="education-content-heading" 
+                id="education-content-heading">
+                What is the Highest Level of Education?</h4>
+
+                <label for="education-radio-1" class="work-experience-label" id="eaducation_label_1">
+                    <input type="radio" name="Doctoral-Degree" 
+                    class="educations-radio-btn"
+                    id="education-radio-1"
+                    onclick="educationPointDecider(1)">
+                    Doctoral Degree
+                </label>
+
+                <label for="education-radio-2" class="work-experience-label" id="eaducation_label_2">
+                    <input type="radio" name="Masters-Degree" 
+                    class="educations-radio-btn" 
+                    id="education-radio-2"
+                    onclick="educationPointDecider(2)">
+                    Master’s Degree
+                </label>
+
+                <label for="education-radio-3" class="work-experience-label" id="eaducation_label_3">
+                    <input type="radio" name="Post-Graduate-Certificate-or-Diploma" 
+                    class="educations-radio-btn" 
+                    id="education-radio-3"
+                    onclick="educationPointDecider(3)">
+                    Post-Graduate Certificate or Diploma
+                </label>
+
+                <label for="education-radio-4" class="work-experience-label" id="eaducation_label_4">
+                    <input type="radio" name="Bachelors-Degree"
+                     class="educations-radio-btn" 
+                     id="education-radio-4"
+                     onclick="educationPointDecider(4)">
+                    Bachelor’s Degree
+                </label>
+
+                <label for="education-radio-5" class="work-experience-label" id="eaducation_label_5">
+                    <input type="radio" name=" Associate-Degree" 
+                    class="educations-radio-btn" 
+                    id="education-radio-5"
+                    onclick="educationPointDecider(5)">
+                    Associate Degree
+                </label>
+
+                <label for="education-radio-6" class="work-experience-label" id="eaducation_label_6">
+                    <input type="radio" name="Post-secondary-Diploma-Certificate" 
+                    class="educations-radio-btn" 
+                    id="education-radio-6"
+                    onclick="educationPointDecider(6)">
+                    Post-secondary Diploma/Certificate (Trades or Non-Trades)
+                </label>
+
+                <label for="education-radio-7" class="work-experience-label" id="eaducation_label_7">
+                    <input type="radio" name="Secondary-School" 
+                    class="educations-radio-btn" 
+                    id="education-radio-7"
+                    onclick="educationPointDecider(7)">
+                    Secondary School (High School) or Less
+                </label>
+        </div>
+        </div>
+        <div class="functionality-3" id="functionality-3">
+            <label for="educationPointDisplayer" class="work-experience-points">Point
+            <input type="text" name="educations-point-displayer"
+             class="work-experience-point-displayer"
+             id="educationPointDisplayer" readonly>
+            </label>
+
+             <button class="btn" id="prev-btn-edu-sec"
+             onclick="educationPreviousBtn()"> 
+             < Prev
+             </button>
+
+             <button class="btn" id="next-btn-edu-sec"
+             onclick="educationNextBtn()">
+             Next >
+            </button>
+          </div>
+    </section>
+
+
+    <!-- 5. ADDITIONAL POINTS FOR POST SECONDARY EDUCATION COMPLETED IN BC OR CANADA? SECTION -->
+    <section class="common-section" id="first-additional-education">
+        <div class="first-ad-content-educations">
+
+            <h2 class="factor-heading_1">Human Capital Factors</h2> 
+            <h3 id="section-heading-5" class="section-heading-1">Education</h3>
+
+            <div class="dynamic-content-1" id="dynamic-content-5">
+                <h4 class="education-content-heading" 
+                id="education-content-heading-2">
+                Additional points for post secondary education completed in BC or Canada?</h4>
+
+                <label for="education-radio-8" class="work-experience-label" id="eaducation_label_8">
+                    <input type="radio" name="Not-Applicable" 
+                    class="first-education-radio-btn" 
+                    id="education-radio-8"
+                    onclick="firstEducationPointDecider(1)">
+                    Not Applicable
+                </label>
+
+                <label for="education-radio-9" class="work-experience-label" id="eaducation_label_9">
+                    <input type="radio" name="Inside-BC" 
+                    class="first-education-radio-btn" 
+                    id="education-radio-9"
+                    onclick="firstEducationPointDecider(2)">
+                     Inside BC
+                </label>
+
+                <label for="education-radio-10" class="work-experience-label" id="eaducation_label_10">
+                    <input type="radio" name="In-Canada" 
+                    class="first-education-radio-btn" 
+                    id="education-radio-10"
+                    onclick="firstEducationPointDecider(3)">
+                    In Canada (Outside BC)
+                </label>
+        </div>
+        </div>
+        <div class="functionality-4" id="functionality-4">
+            <label for="educationPointDisplayer_1" class="work-experience-points">Point
+            <input type="text" name="education-point-displayer-1"
+             class="work-experience-point-displayer"
+             id="educationPointDisplayer_1" readonly>
+            </label>
+
+             <button class="btn" 
+             id="prev-btn-edu-1"
+             onclick="firstEducationPreviousBtn()">
+             < Prev 
+             </button>
+
+             <button class="btn" 
+             id="next-btn-edu-1"
+             onclick="firstEducationNextBtn()">
+             Next >
+            </button>
+          </div>
+    </section>
+
+    
+    <!-- 6. DO YOU HAVE ELIGIBLE PROFESSIONAL DESIGNATION IN B.C.? SECTION  -->
+    <section class="common-section" id="second-additional-education">
+        <div class="second-ad-content-educations">
+            <h2 class="factor-heading_1">Human Capital Factors</h2> 
+            <h3 id="section-heading-6" class="section-heading-1">Education</h3>
+
+            <div class="dynamic-content-1" id="dynamic-content-6">
+                <h4 class="education-content-heading" 
+                id="education-content-heading-3">
+                Do you have Eligible Professional Designation In B.C.?</h4>
+                
+                <div class="toggle-button" id="toggle-button" onclick="showItem()"><span class="text-content">Select</span>
+                     <span class="material-symbols-outlined" id="dropdown-symbol">
+                    arrow_drop_down
+                    </span>
+                </div>
+                <ul class="toggle-container" id="toggle-container">
+                   <li class="toggle-items" id="toggle-item-1" onclick="showItem(1)">Not Applicable</li>
+                   <li class="toggle-items" id="toggle-item-2" onclick="showItem(2)">Any valid trade certificate issued by SkilledTradesBC
+                    or Industry Training Authority British Columbia (ITABC)</li>
+                   <li class="toggle-items" id="toggle-item-3" onclick="showItem(3)">Animal health technologists and veterinary technicians: NOC 32104</li>
+                   <li class="toggle-items" id="toggle-item-4" onclick="showItem(4)">Dental Assistants: NOC 33100</li>
+                   <li class="toggle-items" id="toggle-item-5" onclick="showItem(5)">Dental Hygienists: NOC 32111</li>
+                   <li class="toggle-items" id="toggle-item-6" onclick="showItem(6)">Dental Technicians: NOC 33100</li>
+                   <li class="toggle-items" id="toggle-item-7" onclick="showItem(7)">Denturists: NOC 32110</li>
+                   <li class="toggle-items" id="toggle-item-8" onclick="showItem(8)">Early Childhood Educators (ECE): NOC 42202</li>
+                   <li class="toggle-items" id="toggle-item-9" onclick="showItem(9)">Health Care Aide: NOC 33102</li>
+                   <li class="toggle-items" id="toggle-item-10" onclick="showItem(10)">Pharmacy Technicians: NOC 33103</li>
+                   <li class="toggle-items" id="toggle-item-11" onclick="showItem(11)">Practical Nurses: NOC 32101</li>
+                   <li class="toggle-items" id="toggle-item-12" onclick="showItem(12)">Traditional Chinese medicine practitioners and acupuncturists: NOC 32200</li>
+                </ul>
+
+                <div class="functionality-6" id="functionality-6">
+                    <label for="educationPointDisplayer_2" class="work-experience-points">Point
+                    <input type="text" name="educationPointDisplayer-2-point-displayer"
+                     class="work-experience-point-displayer"
+                     id="educationPointDisplayer_2" readonly>
+                    </label>
+
+                     <button class="btn" id="prev-btn-edu-sec-2"
+                      onclick="secondEducationPreviousBtn()">
+                      < Prev 
+                    </button>
+
+                     <button class="btn" id="next-btn-edu-sec-2"
+                      onclick="secondEducationNextBtn()">
+                      Next >
+                    </button>
+                  </div>
+        </div>
+
+    </section>
+
+
+    <!-- 7. LANGUAGE POINTS (FRENCH OR ENGLISH)  -->
+    <section class="common-section" id="languages">
+        <div class="language-content">
+            <h2 class="factor-heading_1">Human Capital Factors</h2> 
+            <h3 id="section-heading-7" class="section-heading-1">Language</h3>
+
+           
+                <div class="dynamic-content-1" id="dynamic-content-7">
+                    <h4 class="w-xp-content-heading" 
+                    id="language-content-heading">
+                    Language Points (French or English)
+                </h4>
+
+                <label for="language-radio-1" class="work-experience-label" id="language_label_1">
+                    <input type="radio" name="CLB 9+" 
+                    class="language-radio-btn" 
+                    id="language-radio-1" 
+                    onclick="languagePointDecider(1)">
+                    CLB 9+
+                </label>
+
+                <label for="language-radio-2" class="work-experience-label" id="language_label_2">
+                    <input type="radio" name=" CLB 8" 
+                    class="language-radio-btn" 
+                    id="language-radio-2" 
+                    onclick="languagePointDecider(2)">
+
+                    CLB 8
+                </label>
+
+                <label for="language-radio-3" class="work-experience-label" id="language_label_3">
+                    <input type="radio" name=" CLB 7" 
+                    class="language-radio-btn" 
+                    id="language-radio-3" 
+                    onclick="languagePointDecider(3)">
+                    CLB 7
+                </label>
+
+                <label for="language-radio-4" class="work-experience-label" id="language_label_4">
+                    <input type="radio" name=" CLB 6" 
+                    class="language-radio-btn" 
+                    id="language-radio-4" 
+                    onclick="languagePointDecider(4)">
+                    CLB 6
+                </label>
+
+                <label for="language-radio-5" class="work-experience-label" id="language_label_5">
+                    <input type="radio" name=" CLB 5" 
+                    class="language-radio-btn" 
+                    id="language-radio-5" 
+                    onclick="languagePointDecider(5)">
+                   CLB 5
+                </label>
+
+                <label for="language-radio-6" class="work-experience-label" id="language_label_6">
+                    <input type="radio" name=" CLB 4" 
+                    class="language-radio-btn" 
+                    id="language-radio-6" 
+                    onclick="languagePointDecider(6)">
+                   CLB 4
+                </label>
+
+                <label for="language-radio-7" class="work-experience-label" id="language_label_7">
+                    <input type="radio" name=" CLB 4" 
+                    class="language-radio-btn" 
+                    id="language-radio-7" 
+                    onclick="languagePointDecider(7)">
+                   Below 4 or no test submitted
+                </label>
+
+            
+        </div>
+        <div class="functionality-7" id="functionality-7">
+            <label for="languagePointDisplayer" class="work-experience-points">Point
+            <input type="text" name="language-point-displayer"
+             class="work-experience-point-displayer"
+             id="languagePointDisplayer" readonly>
+            </label>
+
+             <button class="btn" id="prev-btn-language"
+              onclick="languagePreviousBtn()">
+               < Prev 
+            </button>
+
+             <button class="btn" id="next-btn-language" 
+             onclick="languageNextBtn()">
+             Next >
+            </button>
+
+          </div>
+    </section>
+
+
+    <!-- 8. LANGUAGE PROFICIENCY IN BOTH ENGLISH AND FRENCH AND SCORED CLB 4 OR ABOVE IN BOTH TESTS? -->
+    <section class="common-section" id="first-additional-languages">
+        <div class="first-ad-content-languages">
+            <h2 class="factor-heading_1">Human Capital Factors</h2>
+            <h3 id="section-heading-8" class="section-heading-1">Language</h3>
+
+            <div class="dynamic-content-1" id="dynamic-content-8">
+                <h4 class="ad-content-work-xp-heading" 
+                id="first-language-content-heading-1">
+                Language Proficiency in Both English And French and Scored CLB 4 or above in Both Tests?</h4>
+
+                <label for="first-language-radio-1" class="work-experience-label" id="xp_label_10">
+                    <input type="radio" name="true" 
+                    class="first-language-radio-btn"
+                    id="first-language-radio-1" onclick="firstLanguagePointDecider(1)">
+                    Yes
+                </label>
+
+                <label for="first-language-radio-2" class="work-experience-label" id="xp_label_11">
+                    <input type="radio" name="false" 
+                    class="first-language-radio-btn" 
+                    id="first-language-radio-2" onclick="firstLanguagePointDecider(0)">
+                    No
+                </label>
+              </div>
+        </div>
+        <div class="functionality-8" id="functionality-8">
+            <label for="firstLanguagePointDisplayer_1" class="work-experience-points">Point
+            <input type="text" name="first-language-point-displayer-1"
+             class="work-experience-point-displayer"
+             id="firstLanguagePointDisplayer_1" readonly>
+            </label>
+            
+             <button class="btn" id="prev-btn-first-language-1"
+             onclick="firstLanguagePreviousBtn()"> 
+             < Prev 
+            </button>
+
+             <button class="btn" id="prev-btn-first-language-1"
+             onclick="firstLanguageNextBtn()">
+             Next >
+            </button>
+          </div>
+    </section>
+
+
+
+    <!-- 9. WHAT IS THE HOURLY WAGE OF YOUR B.C JOB OFFER? -->
+    <section class="common-section" id="economic-factors">
+        <div class="economic-factors-content">
+            
+
+            <h2 class="factor-heading_2">Economic Factors</h2> 
+            <h3 id="section-heading-9" class="section-heading-1">Hourly Wage of the B.C. Job Offer</h3>
+
+            <div class="dynamic-content-1" id="dynamic-content-9">
+                <h4 class="education-content-heading" 
+                id="offer-content-heading-1">
+                What is the Hourly Wage of your B.C Job Offer?</h4>
+                
+                <div class="toggle-button" id="job-offer-toggle-btn" onclick="jobOfferPrice()"><span class="job-offer-text-content">Select</span>
+                     <span class="material-symbols-outlined" id="dropdown-symbol-2">
+                    arrow_drop_down
+                    </span>
+                </div>
+                <ul class="toggle-container-2" id="toggle-container-2">
+                   <li class="toggle-items-2" id="second-section-toggle-item-1" onclick="jobOfferPrice(1)">$70.00 and above</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-2" onclick="jobOfferPrice(2)">$69.00 to $69.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-3" onclick="jobOfferPrice(3)">$68.00 to $68.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-4" onclick="jobOfferPrice(4)">$67.00 to $67.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-5" onclick="jobOfferPrice(5)">$66.00 to $66.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-6" onclick="jobOfferPrice(6)">$65.00 to $65.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-7" onclick="jobOfferPrice(7)">$64.00 to $64.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-8" onclick="jobOfferPrice(8)">$63.00 to $63.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-9" onclick="jobOfferPrice(9)">$62.00 to $62.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-10" onclick="jobOfferPrice(10)">$61.00 to $61.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-11" onclick="jobOfferPrice(11)">$60.00 to $60.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-12" onclick="jobOfferPrice(12)">$59.00 to $59.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-13" onclick="jobOfferPrice(13)">$58.00 to $58.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-14" onclick="jobOfferPrice(14)">$57.00 to $57.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-15" onclick="jobOfferPrice(15)">$56.00 to $56.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-16" onclick="jobOfferPrice(16)">$55.00 to $55.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-17" onclick="jobOfferPrice(17)">$54.00 to $54.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-18" onclick="jobOfferPrice(18)">$53.00 to $53.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-19" onclick="jobOfferPrice(19)">$52.00 to $52.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-20" onclick="jobOfferPrice(20)">$51.00 to $51.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-21" onclick="jobOfferPrice(21)">$50.00 to $50.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-22" onclick="jobOfferPrice(22)">$49.00 to $49.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-23" onclick="jobOfferPrice(23)">$48.00 to $48.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-24" onclick="jobOfferPrice(24)">$47.00 to $47.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-25" onclick="jobOfferPrice(25)">$46.00 to $46.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-26" onclick="jobOfferPrice(26)">$45.00 to $45.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-27" onclick="jobOfferPrice(27)">$44.00 to $44.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-28" onclick="jobOfferPrice(28)">$43.00 to $43.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-29" onclick="jobOfferPrice(29)">$42.00 to $42.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-30" onclick="jobOfferPrice(30)">$41.00 to $41.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-31" onclick="jobOfferPrice(31)">$40.00 to $40.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-32" onclick="jobOfferPrice(32)">$39.00 to $39.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-33" onclick="jobOfferPrice(33)">$38.00 to $38.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-34" onclick="jobOfferPrice(34)">$37.00 to $37.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-35" onclick="jobOfferPrice(35)">$36.00 to $36.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-36" onclick="jobOfferPrice(36)">$35.00 to $35.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-37" onclick="jobOfferPrice(37)">$34.00 to $34.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-38" onclick="jobOfferPrice(38)">$33.00 to $33.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-39" onclick="jobOfferPrice(39)">$32.00 to $32.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-40" onclick="jobOfferPrice(40)">$31.00 to $31.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-41" onclick="jobOfferPrice(41)">$30.00 to $30.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-42" onclick="jobOfferPrice(42)">$29.00 to $29.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-43" onclick="jobOfferPrice(43)">$28.00 to $28.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-44" onclick="jobOfferPrice(44)">$27.00 to $27.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-45" onclick="jobOfferPrice(45)">$26.00 to $26.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-46" onclick="jobOfferPrice(46)">$25.00 to $25.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-47" onclick="jobOfferPrice(47)">$24.00 to $24.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-48" onclick="jobOfferPrice(48)">$23.00 to $23.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-49" onclick="jobOfferPrice(49)">$22.00 to $22.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-50" onclick="jobOfferPrice(50)">$21.00 to $21.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-51" onclick="jobOfferPrice(51)">$20.00 to $20.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-52" onclick="jobOfferPrice(52)">$19.00 to $19.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-53" onclick="jobOfferPrice(53)">$18.00 to $18.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-54" onclick="jobOfferPrice(54)">$17.00 to $17.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-55" onclick="jobOfferPrice(55)">$16.00 to $16.99</li>
+                   <li class="toggle-items-2" id="second-section-toggle-item-56" onclick="jobOfferPrice(56)">Less than $16.00</li>
+                </ul>
+        </div>
+
+        <div class="functionality-9" id="functionality-9">
+            <label for="jobOfferPointDisplayer" class="work-experience-points">Point
+            <input type="text" name="jobOfferPointDisplayer-1-point-displayer"
+             class="work-experience-point-displayer"
+             id="jobOfferPointDisplayer" readonly>
+            </label>
+
+             <button class="btn" id="prev-btn-jofr-1"
+             onclick="jobOfferPreviousBtn()">
+             < Prev 
+            </button>
+
+             <button class="btn" id="next-btn-jofr-1"
+             onclick="jobOfferNextBtn()">
+             Next >
+            </button>
+
+          </div>
+
+    </section>
+
+
+
+    <!-- 10. PLEASE SELECT YOUR AREA OF EMPLOYMENT BASED ON YOUR WORK LOCATION AS PER YOUR BC JOB OFFER -->
+    <section class="common-section" id="first-additional-ef">
+        <div class="first-additional-ef-content">
+
+            <h2 class="factor-heading_2">Economic Factors</h2> 
+            <h3 id="section-heading-10" class="section-heading-1">Area Within B.C.</h3>
+            
+
+            <div class="dynamic-content-1" id="dynamic-content-10">
+                <h4 class="education-content-heading" 
+                id="education-content-heading-2">
+                Please select your area of employment based on your work location as per your BC job offer</h4>
+
+                <label for="first-job-area-radio-1" class="work-experience-label" id="first_job_offer_label_1">
+                    <input type="radio" name="Metro-Vancouver-Regional-District"
+                    class="job-area-radio-btn" 
+                    id="first-job-area-radio-1" 
+                    onclick="jobAreaPointsDecider(1)">
+                    Area 1: Metro Vancouver Regional District
+                </label>
+
+                <label for="first-job-area-radio-2" class="work-experience-label" id="first_job_offer_label_2">
+                    <input type="radio" name="Squamish-Abbotsford-Agassiz-Mission-And-Chilliwack" 
+                    class="job-area-radio-btn" 
+                    id="first-job-area-radio-2" 
+                    onclick="jobAreaPointsDecider(2)">
+                    Area 2: Squamish, Abbotsford, Agassiz, Mission, And Chilliwack
+                </label>
+
+                <label for="first-job-area-radio-3" class="work-experience-label" id="first_job_offer_label_3">
+                    <input type="radio" name="Areas-of-B-C-not-included-in-Area-1-or-2" 
+                    class="job-area-radio-btn" 
+                    id="first-job-area-radio-3" 
+                    onclick="jobAreaPointsDecider(3)">
+                    Area 3: Areas of B.C. not included in Area 1 or 2
+                </label>
+        </div>
+
+            <div class="functionality-10" id="functionality-10">
+                <label for="emplyeeLocationPointDisplayer" class="work-experience-points">Point
+                <input type="text" name="employee-location-point-displayer"
+                 class="work-experience-point-displayer"
+                 id="emplyeeLocationPointDisplayer" readonly>
+                </label>
+
+                 <button class="btn" 
+                 id="employement-area-prev-btn-sec-1"
+                 onclick="jobAreaPreviousBtn()">
+                 < Prev 
+                </button>
+                 <button class="btn" 
+                 id="employement-area-next-btn-sec-1"
+                 onclick="jobAreaNextBtn()">
+                 Next >
+                </button>
+                
+              </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- 11. DID YOU GRADUATE FROM PUBLIC B.C POST SECONDARY INSTITUTION LOCATED OUTSIDE METRO VANCOUVER REGIONAL DISTRICT (AREA 1) WITHIN THE LAST 3 YEARS?* -->
+    <section class="common-section" id="second-additional-ef">
+        <div class="second-additional-ef-content">
+            <h2 class="factor-heading_2">Economic Factors</h2>
+           
+            <div class="dynamic-content-1" id="dynamic-content-11">
+                <h4 class="ad-content-work-xp-heading" 
+                id="second-additional-ef-heading-2">
+                Did you graduate from Public B.C Post Secondary Institution located outside Metro Vancouver regional district (Area 1) within the last 3 years?*</h4>
+                <label for="additional-employee-location-radio-btn-1" class="work-experience-label" id="additional_employee_location_label_1">
+                    <input type="radio" name="True" 
+                    class="additional-employee-location-radio-btn"
+                     id="additional-employee-location-radio-btn-1"
+                     onclick="graduateFromBC(1)">
+                    Yes
+                </label>
+                <label for="additional-employee-location-radio-btn-2" class="work-experience-label" id="additional_employee_location_label_2">
+                    <input type="radio" name="False" 
+                    class="additional-employee-location-radio-btn"
+                     id="additional-employee-location-radio-btn-2"
+                     onclick="graduateFromBC(0)">
+                    No
+                </label>
+              </div>
+
+              <div class="functionality-11" id="functionality-11">
+                <label for="emplyeeLocationPointDisplayer_2" class="work-experience-points">Point
+                <input type="text" name="employee-location-point-displayer-2"
+                 class="work-experience-point-displayer"
+                 id="emplyeeLocationPointDisplayer_2" readonly>
+                </label>
+
+                 <button class="btn" 
+                 id="prev-btn-additional-employee-location-1"
+                 onclick="additionalELPreviousBtn()">
+                 < Prev 
+                </button>
+                 <button class="btn"
+                 id="next-btn-additional-employee-location-1"
+                 onclick="additionalELNextBtn()">
+                 Next >
+                </button>
+              </div>
+        </div>
+    </section>
+
+
+
+    <!-- 12. HAVE YOU WORKED 1 YEAR FULL-TIME OR EQUIVALENT OUTSIDE OF METRO VANCOUVER REGIONAL DISTRICT (AREA 1) WITHIN 5 YEARS?* -->
+    <section class="common-section" id="third-additional-ef">
+        <div class="third-additional-ef-content">
+            <h2 class="factor-heading_2">Economic Factors</h2>
+           
+            <div class="dynamic-content-1" id="dynamic-content-12">
+                <h4 class="ad-content-work-xp-heading" 
+                id="second-additional-ef-heading-2">
+                Have you worked 1 year full-time or equivalent outside of Metro Vancouver Regional District (Area 1) within 5 years?*</h4>
+
+                <label for="area_bc_label_1" class="work-experience-label" id="xp_label_10">
+                    <input type="radio" name="agree" 
+                    class="area-bc-radio-btn" 
+                    id="area_bc_label_1"
+                    onclick="areaInBcPointDecider(1)">
+                    Yes
+                </label>
+
+                <label for="area_bc_label_2" class="work-experience-label" id="xp_label_11">
+                    <input type="radio" name="not-agree" 
+                    class="area-bc-radio-btn" 
+                    id="area_bc_label_2"
+                    onclick="areaInBcPointDecider(0)">
+                    No
+                </label>
+              </div>
+
+              <div class="functionality-12" id="functionality-12">
+                <label for="emplyeeLocationPointDisplayer_3" class="work-experience-points">Point
+                <input type="text" name="area-bc-point-displayer"
+                 class="work-experience-point-displayer"
+                 id="emplyeeLocationPointDisplayer_3" readonly>
+                </label>
+                 <button class="btn" 
+                 id="prev-btn-area-bc"
+                 onclick="areaBcPreviousBtn()">
+                 < Prev 
+                </button>
+                 <button class="btn" 
+                 id="next-btn-area-bc"
+                 onclick="areaBcNextBtn()">
+                 Next >
+                </button>
+
+              </div>
+        </div>
+    </section>
+
+
+    <!-- TOTAL POINTS SECTIONS  -->
+    <section class="common-section" id="total-points">
+        <div class="total-points-content">
+            <h2 class="factor-heading_2">Total Points</h2>
+            <div class="functionality-13" id="functionality-13">
+
+
+                <label for="totalPointsDisplayer" class="work-experience-points" id="totalPointLabel">Point
+                <input type="text" name="total-point-displayer"
+                 class="work-experience-point-displayer"
+                 id="totalPointsDisplayer" readonly>
+                </label>
+
+                <button class="btn" 
+                id="prev-btn-area-bc"
+                onclick="totalPointsPreviousBtn()">
+                < Prev 
+               </button>
+              </div>
+
+              <div class="additionalContent" 
+              id="additionalContent">
+              <p class="about-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo harum laborum consequuntur necessitatibus temporibus. Velit nulla minima doloribus perferendis accusantium, voluptatem beatae ratione iusto delectus quas mollitia, sed ut magni.</p>
+              <div class="contact-button-wrapper">
+                <a href="#" class="contactButton">Contact Us</a>
+                <a href="#" class="contactButton">Learn more</a>
+              </div>
+
+              </div>
+
+        </div>
+    </section>
+
+    </main>
+
+ 
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,726 @@
+
+/* 
+Content : BC_PNP calculator, for canx immigration,
+Author: Kunal Chandra Das,
+Date: 18/03/2024  
+*/
+
+
+/* DEFAULT STYLEING  */
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+  }
+  :root {
+    --heading-color: #3f3f3f;
+    --paragraph-color: #838383;
+    --border: 1px solid #eeee;
+    --section-background: #fafafa;
+    --outline: 0.1rem solid rgb(215, 222, 190);
+    --button-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --button-theme: #ff2626;
+    --button-hover-theme: #ff0000;
+  }
+  /* COMMON STYLEING  */
+  input {
+    border: 1px solid #7777;
+  }
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+  }
+  .btn {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    background: var(--button-theme);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .btn:hover {
+    box-shadow: var(--button-shadow);
+    background: var(--button-hover-theme);
+  }
+  .main-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 600px;
+  }
+  .common-section {
+    width: 70%;
+    height: 550px;
+    border: var(--border);
+    box-shadow: var(--button-shadow);
+    margin: 1rem auto;
+    position: absolute;
+    margin-bottom: 3rem;
+  }
+  .status {
+    border-bottom: 4px solid red;
+    width: 0%;
+  }
+  .common-section:nth-child(1) {
+    display: block;
+  }
+  .common-section:nth-child(2) {
+    display: none;
+  }
+  .common-section:nth-child(3) {
+    display: none;
+  }
+  .common-section:nth-child(4) {
+    display: none;
+  }
+  .common-section:nth-child(5) {
+    display: none;
+  }
+  .common-section:nth-child(6) {
+    display: none;
+    height: 600px;
+  }
+  .common-section:nth-child(7) {
+    display: none;
+  }
+  .common-section:nth-child(8) {
+    display: none;
+  }
+  .common-section:nth-child(9) {
+    display: none;
+  }
+  .common-section:nth-child(10) {
+    display: none;
+  }
+  .common-section:nth-child(11) {
+    display: none;
+  }
+  .common-section:nth-child(12) {
+    display: none;
+  }
+  .common-section:nth-child(13) {
+    display: none;
+  }
+  .factor-heading_1 {
+    text-align: center;
+    margin-top: 26px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .factor-heading_2 {
+    text-align: center;
+    margin-top: 26px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  /* PAGE HEADING SECTION  */
+  .page-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 0;
+  }
+  .page-headings {
+    font-weight: 600;
+    color: var(--heading-color);
+    text-align: center;
+  }
+  .about-txt {
+    text-align: center;
+    font-weight: 300;
+    margin: 1rem 5rem;
+  }
+  
+  /* 1. WORK EXPERIENCE SECTION */
+  .section-heading-1 {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0 4rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+  .dynamic-content-1 {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .w-xp-content-heading {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 4rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+  .work-experience-label {
+    display: flex;
+    margin: 0.6rem 4rem;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--paragraph-color);
+    cursor: pointer;
+  }
+  .work-experience-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .functionality {
+    margin: -9.9rem 4rem;
+    float: right;
+  }
+  .work-experience-points {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--paragraph-color);
+  }
+  .work-experience-point-displayer {
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    width: 70px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--paragraph-color);
+  }
+  #next-btn-w-xp {
+    margin: 10px 0;
+  }
+  
+  /* 2. AT LEAST 1 YEAR OF DIRECTLY RELATED EXPERIENCE IN CANADA? SECTION */
+  .ad-content-work-xp-heading {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+  .first-additional-wxp-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .functionality-1 {
+    margin: 1rem 4rem;
+    float: right;
+  }
+  #next-btn-w-xp-sec-1 {
+    margin: 10px 0;
+  }
+  
+  /* 3. ARE YOU CURRENTLY WORKING FULL-TIME FOR YOUR SUPPORTING B.C. EMPLOYER? SECTION  */
+  .second-additional-wxp-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .functionality-2 {
+    margin: 1rem 4rem;
+    float: right;
+  }
+  #prev-btn-w-xp-sec-2 {
+    margin: 10px 0;
+  }
+  
+  /* 4. HIGHEST EDUCATION SECTION   */
+  .education-content-heading {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 4rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+  }
+  .educations-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .functionality-3 {
+    margin: -9.8rem 4rem;
+    float: right;
+  }
+  #prev-btn-edu-sec {
+    margin: 10px 0;
+  }
+  #educationPointDisplayer {
+    margin-bottom: 20px;
+  }
+  
+  /* 5. ADDITIONAL POINTS FOR POST SECONDARY EDUCATION COMPLETED IN BC OR CANADA? SECTION */
+  .first-education-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #prev-btn-edu-sec-1 {
+    margin: 10px 0;
+  }
+  .functionality-4 {
+    float: right;
+    margin: 0.5rem 4rem;
+  }
+  #educationPointDisplayer_1 {
+    margin-bottom: 30px;
+  }
+  
+  /* 6. DO YOU HAVE ELIGIBLE PROFESSIONAL DESIGNATION IN B.C.? SECTION  */
+  .toggle-button {
+    border: var(--border);
+    width: 50%;
+    padding: 10px 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--paragraph-color);
+    margin: 10px 4rem;
+    cursor: pointer;
+  }
+  .text-content {
+    cursor: pointer;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  .toggle-container {
+    margin-left: 4rem;
+    border: var(--border);
+    width: 50%;
+    height: 210px;
+    overflow-y: scroll;
+    display: none;
+    cursor: pointer;
+  }
+  .toggle-items {
+    display: flex;
+    padding: 6px 0;
+    padding-left: 5px;
+    border: var(--border);
+    font-weight: 500;
+    color: var(--paragraph-color);
+  }
+  .toggle-items:hover {
+    background: var(--button-hover-theme);
+    color: #fff;
+  }
+  #dynamic-content-6 {
+    display: inline;
+  }
+  .functionality-6 {
+    float: right;
+    margin: -3.9rem 4rem;
+  }
+  #prev-btn-edu-sec-2 {
+    margin: 10px 0;
+  }
+  
+  /* 7. LANGUAGE POINTS (FRENCH OR ENGLISH) */
+  .functionality-7 {
+    margin: 11rem 4rem;
+    float: right;
+  }
+  .language-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #languagePointDisplayer {
+    margin-bottom: 30px;
+  }
+  
+  /* 8. LANGUAGE PROFICIENCY IN BOTH ENGLISH AND FRENCH AND SCORED CLB 4 OR ABOVE IN BOTH TESTS? */
+  .functionality-8 {
+    margin: 0rem 4rem;
+    float: right;
+  }
+  .first-language-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #firstLanguagePointDisplayer_1 {
+    margin-bottom: 30px;
+  }
+  
+  /* 9. WHAT IS THE HOURLY WAGE OF YOUR B.C JOB OFFER? */
+  .job-offer-text-content {
+    cursor: pointer;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  .toggle-container-2 {
+    margin-left: 4rem;
+    border: var(--border);
+    width: 50%;
+    height: 201px;
+    overflow-y: scroll;
+    display: none;
+    cursor: pointer;
+  }
+  .toggle-items-2 {
+    display: flex;
+    padding: 6px 0;
+    padding-left: 5px;
+    border: var(--border);
+    font-weight: 500;
+    color: var(--paragraph-color);
+  }
+  .toggle-items-2:hover {
+    background: var(--button-hover-theme);
+    color: #fff;
+  }
+  .functionality-9 {
+    float: right;
+    margin: 11.1rem 4rem;
+  }
+  #jobOfferPointDisplayer {
+    margin-bottom: 30px;
+  }
+  
+  /* 10. PLEASE SELECT YOUR AREA OF EMPLOYMENT BASED ON YOUR WORK LOCATION AS PER YOUR BC JOB OFFER */
+  .functionality-10 {
+    float: right;
+    margin: -0.5rem 4rem;
+  }
+  .job-area-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #emplyeeLocationPointDisplayer {
+    margin-bottom: 30px;
+  }
+  
+  /* 11. DID YOU GRADUATE FROM PUBLIC B.C POST SECONDARY INSTITUTION LOCATED OUTSIDE METRO VANCOUVER REGIONAL DISTRICT (AREA 1) WITHIN THE LAST 3 YEARS? */
+  #dynamic-content-11 {
+    margin-top: 5rem;
+  }
+  #second-additional-ef-heading-2 {
+    margin-bottom: 1rem;
+  }
+  .functionality-11 {
+    margin: 2rem 4rem;
+    float: right;
+  }
+  .additional-employee-location-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #prev-btn-additional-employee-location-1 {
+    margin: 10px 0;
+  }
+  
+  /* 12. HAVE YOU WORKED 1 YEAR FULL-TIME OR EQUIVALENT OUTSIDE OF METRO VANCOUVER REGIONAL DISTRICT (AREA 1) WITHIN 5 YEARS? */
+  
+  #dynamic-content-12 {
+    margin-top: 5rem;
+  }
+  #second-additional-ef-heading-2 {
+    margin-bottom: 1rem;
+  }
+  .functionality-12 {
+    margin: 2rem 4rem;
+    float: right;
+  }
+  .area-bc-radio-btn {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  #prev-btn-area-bc {
+    margin: 10px 0;
+  }
+  
+  /* 13. TOTAL CALCUTATION POINTS  */
+  
+  .functionality-13 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+  }
+  #totalPointLabel {
+    text-align: center;
+  }
+  #totalPointsDisplayer {
+    text-align: center;
+    font-size: 30px;
+    width: 100px;
+    border-radius: 10px;
+  }
+  .contact-button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .contactButton {
+    border: var(--border);
+    padding: 8px 50px;
+    color: #fff;
+    background: var(--button-theme);
+    font-size: 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin: 5px 5px;
+    text-align: center;
+  }
+  .contactButton:hover {
+    box-shadow: var(--button-shadow);
+    background: var(--button-hover-theme);
+  }
+  
+  /* RESPONSIVENESS DESIGN STARTS */
+  
+
+  
+  @media screen and (max-width: 1175px) {
+    /* COMMON STYLEING  */
+    .common-section:nth-child(4) {
+      height: 707px;
+      margin-bottom: 2rem;
+    }
+    .main-box {
+      margin-bottom: 47rem;
+    }
+   
+    /* 4. HIGHEST EDUCATION SECTION   */
+    .functionality-3 {
+      margin: 2.2rem 4rem;
+    }
+    /* 9. WHAT IS THE HOURLY WAGE OF YOUR B.C JOB OFFER? */
+    .functionality-9 {
+      margin: 2.2rem 4rem;
+    }
+    .common-section:nth-child(9) {
+      height: 675px;
+    }
+  }
+
+  @media screen and (min-width: 1370px) {
+    /* 1. WORK EXPERIENCE SECTION */
+    .functionality {
+      margin: 10.1rem 4rem;
+    }
+  
+  }
+  
+  @media screen and (max-width: 1050px) {
+    .functionality-7 {
+      margin: -9rem 4rem;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+     /* 10. PLEASE SELECT YOUR AREA OF EMPLOYMENT BASED ON YOUR WORK LOCATION AS PER YOUR BC JOB OFFER */
+    .common-section:nth-child(10) {
+      height: 600px;
+    }
+    .functionality-10 {
+      float: right;
+      margin: 2.5rem 4rem;
+    }
+   
+    /* 13. TOTAL CALCUTATION POINTS  */
+    .contact-button-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin: 0 7rem;
+    }
+    .common-section:nth-child(13) {
+      height: 620px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* COMMON STYLEING  */
+    .main-box {
+      margin-bottom: 800px;
+    }
+    .common-section {
+      width: 100%;
+      height: 700px;
+      margin-bottom: 70px;
+    }
+  
+    /* 2. AT LEAST 1 YEAR OF DIRECTLY RELATED EXPERIENCE IN CANADA? SECTION */
+    .common-section:nth-child(2) {
+      height: 600px;
+    }
+    .functionality-1 {
+      margin: 6rem 4rem;
+    }
+    /* 3. ARE YOU CURRENTLY WORKING FULL-TIME FOR YOUR SUPPORTING B.C. EMPLOYER? SECTION  */
+    .common-section:nth-child(3) {
+      height: 600px;
+    }
+    .functionality-2 {
+      margin: 3rem 4rem;
+    }
+    /* 4. HIGHEST EDUCATION SECTION   */
+    .common-section:nth-child(5) {
+      height: 591px;
+    }
+    /* 7. LANGUAGE POINTS (FRENCH OR ENGLISH) */
+    .functionality-7 {
+      margin: 22rem 4rem;
+    }
+    /* 8. LANGUAGE PROFICIENCY IN BOTH ENGLISH AND FRENCH AND SCORED CLB 4 OR ABOVE IN BOTH TESTS? */
+    .common-section:nth-child(8) {
+      height: 558px;
+    }
+    /* 11. DID YOU GRADUATE FROM PUBLIC B.C POST SECONDARY INSTITUTION LOCATED OUTSIDE METRO VANCOUVER REGIONAL DISTRICT (AREA 1) WITHIN THE LAST 3 YEARS? */
+    .common-section:nth-child(11) {
+      height: 576px;
+    }
+    /* 12. HAVE YOU WORKED 1 YEAR FULL-TIME OR EQUIVALENT OUTSIDE OF METRO VANCOUVER REGIONAL DISTRICT (AREA 1) WITHIN 5 YEARS? */
+    .common-section:nth-child(12) {
+      height: 576px;
+    }
+    /* 13. TOTAL CALCUTATION POINTS  */
+    .common-section:nth-child(13) {
+      height: 576px;
+    }
+  }
+  
+  @media screen and (max-width: 720px) {
+    .functionality-7 {
+      margin: 1rem 4rem;
+    }
+  }
+  
+  @media screen and (max-width: 560px) {
+    /* COMMON STYLEING  */
+    .main-box {
+      margin-bottom: 800px;
+    }
+    .common-section {
+      width: 100%;
+      height: 750px;
+    }
+    .common-section:nth-child(6) {
+      height: 700px;
+    }
+      /* 1. WORK EXPERIENCE SECTION */
+    .functionality {
+      margin: 0.1rem 4rem;
+    }
+    /* 2. AT LEAST 1 YEAR OF DIRECTLY RELATED EXPERIENCE IN CANADA? SECTION */
+    .common-section:nth-child(2) {
+      height: 600px;
+    }
+    /* 3. ARE YOU CURRENTLY WORKING FULL-TIME FOR YOUR SUPPORTING B.C. EMPLOYER? SECTION  */
+    .common-section:nth-child(3) {
+      height: 600px;
+    }
+    /* 5. ADDITIONAL POINTS FOR POST SECONDARY EDUCATION COMPLETED IN BC OR CANADA? SECTION */
+    .functionality-6 {
+      float: right;
+      margin: 1.1rem 4rem;
+    }
+   
+    /* 13. TOTAL CALCUTATION POINTS  */
+    .common-section:nth-child(13) {
+      height: 620px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    /* 4. HIGHEST EDUCATION SECTION   */
+    .functionality-3 {
+      margin: 0.2rem 4rem;
+    }
+    /* 10. PLEASE SELECT YOUR AREA OF EMPLOYMENT BASED ON YOUR WORK LOCATION AS PER YOUR BC JOB OFFER */
+    .functionality-10 {
+      float: right;
+      margin: 0.5rem 4rem;
+    }
+  
+  }
+  
+  @media screen and (max-width: 450px) {
+    /* 1. WORK EXPERIENCE SECTION */
+    .functionality {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .work-experience-label {
+      margin: 0.6rem 2rem;
+    }
+    .w-xp-content-heading {
+      margin: 1rem 2rem;
+    }
+    .section-heading-1 {
+      margin: 1rem 2rem;
+    }
+    /* 2. AT LEAST 1 YEAR OF DIRECTLY RELATED EXPERIENCE IN CANADA? SECTION */
+    .ad-content-work-xp-heading {
+      margin: 1rem 2rem;
+    }
+    /* 3. ARE YOU CURRENTLY WORKING FULL-TIME FOR YOUR SUPPORTING B.C. EMPLOYER? SECTION  */
+    .functionality-2 {
+      margin: 6rem 4rem;
+    }
+    /* 4. HIGHEST EDUCATION SECTION   */
+    .education-content-heading {
+      margin: 1rem 2rem;
+    }
+    /* 8. LANGUAGE PROFICIENCY IN BOTH ENGLISH AND FRENCH AND SCORED CLB 4 OR ABOVE IN BOTH TESTS? */
+    .functionality-8 {
+      margin: 4rem 4rem;
+      float: right;
+    }
+      /* 13. TOTAL CALCUTATION POINTS  */
+    .common-section:nth-child(13) {
+      height: 700px;
+    }
+    .contactButton {
+      font-size: 17px;
+    }
+  }
+  
+  @media screen and (max-width: 421px) {
+    /* COMMON STYLEING  */
+    .common-section {
+      width: 100%;
+      height: 800px;
+      margin-bottom: 1rem;
+    }
+    /* 13. TOTAL CALCUTATION POINTS  */
+    .contactButton {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 394px) {
+    /* COMMON STYLEING  */
+    .common-section {
+      width: 100%;
+      height: 730px;
+    }
+  
+   /* 1. WORK EXPERIENCE SECTION */
+    .work-experience-label {
+      margin: 0.6rem 2rem;
+    }
+    .w-xp-content-heading {
+      margin: 1rem 2rem;
+    }
+    .section-heading-1 {
+      margin: 1rem 2rem;
+    }
+  }
+  
